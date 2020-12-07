@@ -10,6 +10,7 @@ public class day5prob1
 {
     public static void main (String[] args) throws IOException
     {
+        //reads file
         FileReader fileReader = new FileReader("day5input.txt");
         BufferedReader bufferedReader = new BufferedReader(fileReader);
         List<String> lines = new ArrayList<String>();
@@ -21,11 +22,13 @@ public class day5prob1
 
         Set<Integer> vals = new HashSet<>(lines.size());
 
+        //converts all codes to decimal numbers
         for(String l : lines)
         {
             vals.add(Integer.parseInt(l.replaceAll("[FL]", "0").replaceAll("[BR]", "1"), 2));
         }
 
+        //part 1
         int max = 0;
         for(int val : vals)
         {
@@ -36,6 +39,7 @@ public class day5prob1
         }
         System.out.println(max); 
 
+        //part 2
         for(int myID = 0; myID < 1024; myID++)
         {
             if(!vals.contains(myID) && vals.contains(myID + 1) && vals.contains(myID - 1))

@@ -12,7 +12,6 @@ public class day3prob2 {
         int y = 0;
         int w = grid[0].length();
         int h = grid.length;
-        char tree = '#';
         long count = 0;
         while (true) {
             x += right;
@@ -23,7 +22,7 @@ public class day3prob2 {
             if (y >= h) {
                 break;
             }
-            if (grid[y].charAt(x) == tree) {
+            if (grid[y].charAt(x) == '#') {
                 count++;
             }
         }
